@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Yonetim.master.cs" Inherits="Kurumsal.Yonetim" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Yönetim Paneli</title>
+    <!--meta tagı ile sayfa hakkında arama motorlarına bilgi verebiliriz -->
+    <meta name="description"  content="Buraya yazılan herşey sonucun açıklanmasında gösterilir."/>
+     
+    <!-- arama motorları bu sayfaları ne sonuçlarda göstersin (noindex), ne de bu sayfadan diğer sayfalara geçiş yapsın (nofollow)-->
+    <meta name="robots" content="noindex,nofollow" />
+
+    <meta name="author" content="Siteyi yapan kişinin adı soyadı" />
+
+    <!--Jquery kütüphanesi -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--CKEditor scripti -->
+    <script src="Content/ckeditor/ckeditor.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace("editor");
+        });
+    </script>
+
+    <link href="Content/yonetim.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!--html5 elemanları: header, footer, section, article, nav, figure -->
+            <header>
+                <h1 class="sol">Yönetim Paneli</h1>
+                <nav class="sag">
+                    <a href="/YonetimAnaSayfa.aspx">Anasayfa</a>
+                    <a href="/Icerikler.aspx">İçerikler</a>
+                    <a href="/Referanslar.aspx">Referanslar</a>
+                    <a href="/Ayar.aspx">Site Ayarları</a>
+                </nav>
+                <div class="clear"></div>
+            </header>
+            <section>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <footer>
+                Copyright 2016 ERP4 sınıfı
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
